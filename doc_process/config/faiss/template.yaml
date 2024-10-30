@@ -1,0 +1,16 @@
+d: 768
+files:
+- domain: wiki
+  dtype: float32
+  embed_model: bge_base15_embedder
+  format: raw
+  name: custom_text_corpus.npy
+  size: 200
+- domain: wiki
+  dtype: float32
+  embed_model: bge_base15_embedder
+  format: raw
+  name: organized_text_corpus.npy
+  size: 11
+root: /cpfs01/shared/public/wangyikun/dataset/1029-longmit-embeddings
+size: 211

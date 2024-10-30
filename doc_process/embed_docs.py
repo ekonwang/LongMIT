@@ -10,7 +10,7 @@ import time
 import torch
 import numpy as np
 import multiprocessing as mp
-from InternEmbedding.embedding.eval.metrics import matrix_cosine_similarity
+from InternEmbedding.embedding.eval.metrics import cosine_similarity as matrix_cosine_similarity
 from InternEmbedding.embedding.train.training_embedder import initial_model
 from InternEmbedding.embedding.eval.mteb_eval_wrapper import EvaluatedEmbedder
 
@@ -195,6 +195,7 @@ def distribute_embedding_documents(config_path: str, num_process_nodes: int):
 
             with memmap(doc_embed_file, np.float32, 'w+', shape=(num_docs, embed_dim)) as embeds:
                 for di, doc in tqdm(enumerate(doc_reader)):
+
                     doc_batch.append(doc['content'])
                     doc_ids.append(di)
 
